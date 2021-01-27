@@ -62,6 +62,7 @@ public class LoginService {
 				if (affectedRow == 1) {
 					Account newAccount = new Account();
 					newAccount.setAccountType("Savings");
+					newAccount.setBalance(100000);
 					newAccount.setLoginId(savedUser.getLoginId());
 					Account savedAccount = accountRepository.save(newAccount);
 					if (savedAccount.getAccountId() != 0) {
