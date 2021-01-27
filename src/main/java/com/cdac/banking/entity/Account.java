@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Account {
 
 	@Column(name = "LOGIN_ID")
 	private int loginId;
+	
+	@OneToOne
+	@JoinColumn(name="LOGIN_ID", referencedColumnName="LOGIN_ID", updatable = false, insertable = false)
+	private LoginUser loginUser;
 
 	public int getAccountId() {
 		return accountId;

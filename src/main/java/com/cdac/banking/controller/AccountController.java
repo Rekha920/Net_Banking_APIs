@@ -1,7 +1,5 @@
 package com.cdac.banking.controller;
 
-import java.text.ParseException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +25,7 @@ public class AccountController {
 
 	@GetMapping("/{accountId}")
 	public AccountResponse fetchAccountDetails(@PathVariable("accountId") int accountId,
-			@RequestParam("limit") int transactionLimit) throws ParseException {
+			@RequestParam("limit") int transactionLimit){
 		return accountService.getAccountDetails(accountId, transactionLimit);
 	}
 
